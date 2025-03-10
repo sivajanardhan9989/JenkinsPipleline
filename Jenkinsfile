@@ -5,11 +5,11 @@ pipeline {
             
             steps {
                 echo "Building the apps and "
-            sh ***
+             sh '''
                 ls -l 
                 pwd 
                 echo "Hello World"
-              ***
+              '''
 
             }
         }
