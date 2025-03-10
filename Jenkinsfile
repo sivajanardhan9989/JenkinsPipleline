@@ -6,9 +6,9 @@ pipeline {
             steps {
                 echo "Building the apps and "
              sh '''
-                ls -l 
+                ls -ltr 
                 pwd 
-                echo "Hello World"
+                echo "Hello from github webhook"
               '''
 
             }
