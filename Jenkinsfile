@@ -5,6 +5,12 @@ pipeline {
             
             steps {
                 echo "Building the apps and "
+            sh ***
+                ls -l 
+                pwd 
+                echo "Hello World"
+              ***
+
             }
         }
         stage('Test') {
