@@ -10,6 +10,10 @@
         CC = 'sivajanardhan'
     }
 
+
+triggers {
+        cron('*/2 * * * *')
+    }
     parameters {
         string(name: 'PERSON', defaultValue: 'SIVA', description: 'Who should I say hello to?')
 
