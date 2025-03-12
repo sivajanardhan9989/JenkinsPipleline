@@ -1,5 +1,15 @@
-pipeline {
+ pipeline {
     agent any
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 1, unit: 'HOURS')
+
+    }
+
+    environment { 
+        CC = 'sivajanardhan'
+    }
+
     stages {
         stage('Build') {
             
@@ -13,6 +23,12 @@ pipeline {
 
             }
         }
+
+        stage('Example') {
+            
+            steps {
+                sh 'printenv'
+            }
         stage('Test') {
             steps {
                 echo "Testing the app"
@@ -23,6 +39,7 @@ pipeline {
                 echo "Deploying the app"
             }
         }
+
     }
 
     post {
