@@ -11,9 +11,10 @@
     }
 
 
-triggers {
-        cron('*/2 * * * *')
-    }
+// triggers {
+//         cron('*/2 * * * *')
+//     }
+
     parameters {
         string(name: 'PERSON', defaultValue: 'SIVA', description: 'Who should I say hello to?')
 
@@ -29,6 +30,19 @@ triggers {
      
 
     stages {
+
+        stage('inputs stage') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello ${params.PERSON}"
+            }
 
         stage('parameters') {
             steps {
