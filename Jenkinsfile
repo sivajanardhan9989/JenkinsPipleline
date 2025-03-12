@@ -30,8 +30,7 @@
      
 
     stages {
-
-        stage('inputs stage') {
+      stage('inputs stage') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
@@ -41,7 +40,7 @@
                 }
             }
             steps {
-                echo "Hello ${params.PERSON}"
+                echo "Hello, ${PERSON}, nice to meet you."
             }
 
         stage('parameters') {
