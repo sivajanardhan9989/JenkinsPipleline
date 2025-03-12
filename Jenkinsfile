@@ -23,12 +23,14 @@
 
             }
         }
-
+    
         stage('Example') {
             
             steps {
                 sh 'printenv'
             }
+
+        }
         stage('Test') {
             steps {
                 echo "Testing the app"
@@ -62,5 +64,4 @@
     }
 }
 
- }
  
