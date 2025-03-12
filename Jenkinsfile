@@ -30,29 +30,9 @@
      
 
     stages {
-       stage('INPUTstage') {
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-                parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                }
 
-                }
+          stage('parameters') {
 
-
-            
-
-                steps {
-                echo "Hello, ${PERSON}, nice to meet you."
-            }
-
-        }
-            
-      
-
-        stage('parameters') {
             steps {
                 echo "Hello ${params.PERSON}"
 
@@ -117,5 +97,7 @@
             echo "For example, if the Pipeline was previously failing but is now successful"
         }
     }
-}
 
+ 
+
+ }
