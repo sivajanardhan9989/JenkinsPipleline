@@ -22,7 +22,11 @@
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
-     stage('parameters') {
+     
+
+    stages {
+
+        stage('parameters') {
             steps {
                 echo "Hello ${params.PERSON}"
 
@@ -36,8 +40,6 @@
             }
         }
 
-
-    stages {
         stage('Build') {
             
             steps {
