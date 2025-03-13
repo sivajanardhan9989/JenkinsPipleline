@@ -74,7 +74,7 @@
 
         stage('prod'){
             when {
-                branch 'main'
+                branch 'origin/main'
             }
             steps {
                 echo "This will run only on the master branch"
