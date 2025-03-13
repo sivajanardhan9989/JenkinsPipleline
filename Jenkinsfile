@@ -68,14 +68,19 @@
                 sh 'printenv'
             }
 
+        
+
+        }
+
         stage('prod'){
             when {
-                branch 'master'
+                branch 'main'
+            }
+            steps {
+                echo "This will run only on the master branch"
             }
             
         }    
-
-        }
         stage('Test') {
             steps {
                 echo "Testing the app"
