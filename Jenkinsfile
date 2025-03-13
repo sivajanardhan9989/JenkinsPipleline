@@ -46,6 +46,9 @@
             }
         }
 
+
+        
+
         stage('Build') {
             
             steps {
@@ -64,6 +67,13 @@
             steps {
                 sh 'printenv'
             }
+
+        stage('prod'){
+            when {
+                branch 'master'
+            }
+            
+        }    
 
         }
         stage('Test') {
